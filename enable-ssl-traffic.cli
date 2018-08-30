@@ -1,0 +1,18 @@
+# enable ssl for the normal non-management traffic port
+
+embed-server --server-config=standalone.xml
+
+/subsystem=elytron/key-store=httpsTrafficKS:add(path=keystore-traffic.jks, credential-reference={clear-text=secret}, type=JKS)
+
+/subsystem=elytron/key-manager=httpsTrafficKM:add(key-store=httpsKS, algorithm="SunX509", credential-reference={clear-text=secret})
+
+/subsystem=elytron/server-ssl-context=httpsTrafficSSC:add(key-manager=httpsTrafficKM, protocols=["TLSv1.2"])
+
+batch
+/subsystem=undertow/server=default-server/https-listener=https:undefine-attribute(name=security-realm)
+/subsystem=undertow/server=default-server/https-listener=https:write-attribute(name=ssl-context, value=httpsTrafficSSC)
+run-batch
+
+reload
+
+stop-embedded-server
