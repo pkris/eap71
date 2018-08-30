@@ -2,13 +2,13 @@
 
 embed-server --server-config=standalone.xml
 
-/subsystem=elytron/key-store=httpsKS:add(path=keystore.jks,relative-to=jboss.server.config.dir,credential-reference={clear-text=secret},type=JKS)
+/subsystem=elytron/key-store=httpsMgmtKS:add(path=keystore.jks,relative-to=jboss.server.config.dir,credential-reference={clear-text=secret},type=JKS)
 
-/subsystem=elytron/key-manager=httpsKM:add(key-store=httpsKS,algorithm="SunX509",credential-reference={clear-text=secret})
+/subsystem=elytron/key-manager=httpsMgmtKM:add(key-store=httpsMgmtKS,algorithm="SunX509",credential-reference={clear-text=secret})
 
-/subsystem=elytron/server-ssl-context=httpsSSC:add(key-manager=httpsKM,protocols=["TLSv1.2"])
+/subsystem=elytron/server-ssl-context=httpsMgmtSSC:add(key-manager=httpsMgmtKM,protocols=["TLSv1.2"])
 
-/core-service=management/management-interface=http-interface:write-attribute(name=ssl-context, value=httpsSSC)
+/core-service=management/management-interface=http-interface:write-attribute(name=ssl-context, value=httpsMgmtSSC)
 
 /core-service=management/management-interface=http-interface:write-attribute(name=secure-socket-binding, value=management-https)
 
