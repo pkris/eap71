@@ -34,6 +34,7 @@ https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_applicati
 # Setup RBAC for AAA
 
 # Migrate secret handling methodology
+https://docs.jboss.org/author/display/WFLY/Using+the+Elytron+Subsystem#UsingtheElytronSubsystem-CreateandUseaCredentialStore
 
 # Verify database drivers
 
