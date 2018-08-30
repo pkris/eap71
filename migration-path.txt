@@ -29,7 +29,7 @@ https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_applicati
 https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/how_to_configure_server_security/#elytron_one_way_ssl_mgmt
 
 # Setup LDAP for AAA
-https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/how_to_configure_identity_management/#elytron_ldap_auth_app
+https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/how_to_configure_identity_management/#securing_the_management_interfaces_with_ldap
 
 # Setup RBAC for AAA
 
