@@ -35,6 +35,7 @@ https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_applicati
 
 # Migrate secret handling methodology
 https://docs.jboss.org/author/display/WFLY/Using+the+Elytron+Subsystem#UsingtheElytronSubsystem-CreateandUseaCredentialStore
+http://www.mastertheboss.com/jboss-server/jboss-security/using-credential-stores-to-store-your-passwords-in-wildfly-11
 
 # Verify database drivers
 
