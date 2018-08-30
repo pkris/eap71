@@ -1,0 +1,17 @@
+# enable ssl for the management console
+
+embed-server --server-config=standalone.xml
+
+/subsystem=elytron/key-store=httpsKS:add(path=keystore.jks,relative-to=jboss.server.config.dir,credential-reference={clear-text=secret},type=JKS)
+
+/subsystem=elytron/key-manager=httpsKM:add(key-store=httpsKS,algorithm="SunX509",credential-reference={clear-text=secret})
+
+/subsystem=elytron/server-ssl-context=httpsSSC:add(key-manager=httpsKM,protocols=["TLSv1.2"])
+
+/core-service=management/management-interface=http-interface:write-attribute(name=ssl-context, value=httpsSSC)
+
+/core-service=management/management-interface=http-interface:write-attribute(name=secure-socket-binding, value=management-https)
+
+reload
+
+stop-embedded-server

@@ -1,0 +1,41 @@
+
+
+7.1 MIGRATION ====================================
+
+# Software base layer update
+
+
+	download 7.1.0 distribution
+	download 7.1.4 patch zip
+
+
+	run jboss_home\bin\jboss-cli.bat
+
+	in disconnected mode apply patch:
+
+	  patch apply C:\dev\work\...\jboss-eap-7.1.4-patch.zip
+	  
+	 Expect:
+
+	{
+		"outcome" : "success",
+		"result" : {}
+	}
+	
+# Establish SSL for non-management traffic
+https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/how_to_configure_server_security/#elytron_one_way_ssl_apps
+
+# Establish SSL for management traffic
+https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/how_to_configure_server_security/#elytron_one_way_ssl_mgmt
+
+# Setup LDAP for AAA
+
+# Setup RBAC for AAA
+
+# Migrate secret handling methodology
+
+# Verify database drivers
+
+# Verify database definitions
+
+# Verify 
